@@ -1,0 +1,12 @@
+title: Streamlit Authenticator Demo
+login:
+  welcome: Welcome
+  logout: Logout
+  warning: Please login
+  error: Incorrect username or password
+languages:
+  select: Choose a language
+main:
+  title: Welcome to Streamlit!
+  content: Your app here!
+users_management:

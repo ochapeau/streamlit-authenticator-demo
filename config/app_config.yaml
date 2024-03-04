@@ -1,0 +1,6 @@
+config:
+  auth: ./config/auth.yaml # streamlit-authenticator config
+languages:
+  EN: ./assets/lang/en.yaml # english strings
+  FR: ./assets/lang/fr.yaml # french strings
+default_language: EN # default language key

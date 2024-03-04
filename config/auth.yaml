@@ -1,0 +1,11 @@
+cookie:
+  expiry_days: 30
+  key: 48ZEOOljabJsVS7usolB
+  name: auth_demo_app
+credentials:
+  usernames:
+    toto:
+      email: toto@toto.com
+      logged_in: true
+      name: Toto Toto
+      password: $2b$12$bMWP6W.Y64.S662pzh87k.dOoSnAiJK668qA/BG/65y4T95sUUgFK

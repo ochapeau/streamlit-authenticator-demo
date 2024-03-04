@@ -1,0 +1,16 @@
+title: Streamlit Authenticator Demo
+login:
+  fields:
+    Form name: Connexion
+    Username: Utilisateur
+    Password: Mot de passe
+    Login: Se connecter
+  welcome: Bienvenue
+  logout: Déconnexion
+  warning: Veuillez vous connecter
+  error: Nom d'utilisateur ou mot de passe incorrects
+languages:
+  select: Choisir une langue
+main:
+  title: Bienvenue sur Streamlit !
+  content: Votre application ici !
