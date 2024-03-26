@@ -43,6 +43,7 @@ def load_languages_files(config: dict[str, any]):
     """
     # Session State keys
     languages_key = "languages"
+    current_language_key = "current_language"
     strings_key = "strings"
     # Initializing the "languages" object in the session_state
     if languages_key not in st.session_state:
@@ -55,27 +56,18 @@ def load_languages_files(config: dict[str, any]):
         st.session_state[strings_key] = st.session_state[languages_key][
             config["default_language"]
         ]
+    if current_language_key not in st.session_state:
+        st.session_state[current_language_key] = config["default_language"]
 
 
 def update_language() -> None:
     """Updates the 'st.session_state.strings' to the strings of the 'st.session_state.language'"""
-    selected_language = st.session_state.language
-    st.session_state.strings = st.session_state.languages[selected_language]
+    st.session_state.strings = st.session_state.languages[
+        st.session_state.current_language
+    ]
 
 
 # Streamlit
-def get_horizontal_row() -> str:
-    """
-    Generates an HTML string representing a horizontal row.
-
-    This function is useful for adding a visual separation in Streamlit applications using HTML.
-
-    Returns:
-        str: An HTML string that renders a horizontal rule (<hr />) when used with an HTML renderer.
-    """
-    return """<hr />"""
-
-
 def check_required_session_state_keys(required_keys: list[str]) -> bool:
     """Check if specified keys exist and are not None in Streamlit's session state.
 

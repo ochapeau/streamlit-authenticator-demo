@@ -21,14 +21,15 @@ def main(authenticator):
     # Logout button
     authenticator.logout(st.session_state.strings["login"]["logout"], location="sidebar")
     # Horizontal separator
-    st.sidebar.markdown(utils.get_horizontal_row(), unsafe_allow_html=True)
+    st.sidebar.divider()
 
     # Language "block"
     language_options = list(st.session_state.languages.keys())
     st.sidebar.selectbox(
         label=st.session_state.strings["languages"]["select"],
         options=language_options,
-        key="language",
+        index=language_options.index(st.session_state.current_language),
+        key="current_language",
         on_change=utils.update_language,
     )
 
@@ -51,7 +52,7 @@ if __name__ == "__main__":
         st.session_state.config = utils.load_yaml(file_path=APP_CONFIG_FILE)
 
     # Load languages
-    utils.load_languages(st.session_state.config)
+    utils.load_languages_files(st.session_state.config)
 
     # Authenticator
     if "auth_config" not in st.session_state:
