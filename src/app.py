@@ -19,7 +19,9 @@ def main(authenticator):
         f'**{st.session_state.strings["login"]["welcome"]}** {st.session_state["name"]}'
     )
     # Logout button
-    authenticator.logout(st.session_state.strings["login"]["logout"], location="sidebar")
+    authenticator.logout(
+        st.session_state.strings["login"]["logout"], location="sidebar"
+    )
     # Horizontal separator
     st.sidebar.divider()
 
@@ -35,8 +37,8 @@ def main(authenticator):
 
     # Main content
     with st.container(border=False):
-        st.write(f"# {st.session_state.strings["main"]["title"]} 👋")
-        st.write(f"## {st.session_state.strings["main"]["content"]}")
+        st.write(f'# {st.session_state.strings["main"]["title"]} 👋')
+        st.write(f'## {st.session_state.strings["main"]["content"]}')
 
 
 if __name__ == "__main__":
